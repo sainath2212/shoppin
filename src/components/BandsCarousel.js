@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import appleWatchSEData from "../../data/appleWatchSE/appleWatchSE_midnightAlum.json";
 import appleWatchHSData from "../../data/appleWatchHermesSeries10/appleWatchHS10.json";
 import appleWatchSeries10Data from "../../data/appleWatchSeries10/appleWatch10_silverAlumi";
-
+import "./Carousel.css";
 const BandCarousel = ({ selectedOption }) => {
   const [centerFaceImageIndex, setCenterFaceImageIndex] = useState(0);
   const [selectedCollection, setSelectedCollection] =
@@ -75,9 +75,9 @@ const BandCarousel = ({ selectedOption }) => {
   }, [selectedOption]);
   console.log(selectedCollection);
   return (
-    <div className="pt-10">
-      <div className="flex flex-col items-center">
-        <div className="absolute z-10">
+    <div className="pt-10 ">
+      <div className="flex flex-col items-center ">
+        <div className="absolute z-10 ">
           {selectedCollection[0] && (
             <img
               src={selectedCollection[0].watchcaseUrl}
@@ -98,7 +98,7 @@ const BandCarousel = ({ selectedOption }) => {
 
           <button
             onClick={scrollRight}
-            className="absolute right-[1rem] top-[20rem] z-30 bg-gray-200 text-gray-500 p-[6px] rounded-full"
+            className="absolute right-[1rem] top-[20rem] z-30 bg-gray-200 text-gray-500 p-[6px] rounded-full "
           >
             <ChevronRight height={27} width={27} />
           </button>
@@ -106,12 +106,12 @@ const BandCarousel = ({ selectedOption }) => {
 
         <div
           ref={carouselRef}
-          className={`absolute flex ${
+          className={`absolute flex  ${
             isSideView ? "overflow-hidden" : "overflow-x-auto"
-          } space-x-[-5rem] snap-x snap-mandatory scrollbar-hidden px-[40%]`}
+          } space-x-[-5rem] snap-x snap-mandatory  px-[40%] scrollbar-hidden`}
         >
           {selectedCollection.map((image, index) => (
-            <div key={index} className="flex-shrink-0 snap-center">
+            <div key={index} className="flex-shrink-0 snap-center ">
               <img
                 src={image.watchbandUrl}
                 alt={`apple-watch-${index}`}
@@ -123,7 +123,7 @@ const BandCarousel = ({ selectedOption }) => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center mt-[28rem]"></div>
+      <div className="flex flex-col items-center mt-[28rem] "></div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import appleWatchSEData from "../../data/appleWatchSE/appleWatchSE_midnightAlum.json";
 import appleWatchHSData from "../../data/appleWatchHermesSeries10/appleWatchHS10.json";
 import appleWatchSeries10Data from "../../data/appleWatchSeries10/appleWatch10_silverAlumi";
+import "./Carousel.css";
 
 const CaseCarousel = ({ selectedOption }) => {
   const [centerFaceImageIndex, setCenterFaceImageIndex] = useState(0);
